@@ -34,6 +34,7 @@ Just put the component in your application setting the onChanged callback.
          favorite: ['+39','FR'],
          // optional. Shows only country name and flag
          showCountryOnly: false,
+         // showOnlyFlag: true,
          // optional. Shows only country name and flag when popup is closed.
          showOnlyCountryWhenClosed: false,
          // optional. aligns the flag and the Text left

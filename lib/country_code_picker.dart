@@ -60,6 +60,9 @@ class CountryCodePicker extends StatefulWidget {
   /// shows the flag
   final bool showFlag;
 
+  /// show only the flag
+  final bool showOnlyFlag;
+
   final bool hideMainText;
 
   final bool? showFlagMain;
@@ -100,6 +103,7 @@ class CountryCodePicker extends StatefulWidget {
     this.showOnlyCountryWhenClosed = false,
     this.alignLeft = false,
     this.showFlag = true,
+    this.showOnlyFlag = false,
     this.showFlagDialog,
     this.hideMainText = false,
     this.showFlagMain,
@@ -158,6 +162,14 @@ class CountryCodePickerState extends State<CountryCodePicker> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.showOnlyFlag) {
+      return Image.asset(
+        selectedItem!.flagUri!,
+        package: 'country_code_picker',
+        width: widget.flagWidth,
+      );
+    }
+
     Widget internalWidget;
     if (widget.builder != null) {
       internalWidget = InkWell(
